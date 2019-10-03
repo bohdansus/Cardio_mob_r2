@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Electrocardiograph"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="Electrocardiograph.Pages.ChartElectrocardiograph"
+             Title="Electrocardiograph">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="heart.png"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout x:Name="mainStackLayout" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
+        <chart:SfChart x:Name="_cardiogramChart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart.PrimaryAxis>
+                <chart:NumericalAxis AutoScrollingDelta="5">
+                    <chart:NumericalAxis.Title>
+                        <chart:ChartAxisTitle Text="Time, s"/>
+                    </chart:NumericalAxis.Title>
+                </chart:NumericalAxis>
+            </chart:SfChart.PrimaryAxis>
+
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis Minimum="200" Maximum="550">
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+
+            <chart:SfChart.Series>
+                <chart:LineSeries x:Name="series" Color="Red" StrokeWidth="1" XBindingPath="X" YBindingPath="Y"/>
+            </chart:SfChart.Series>
+
+            <chart:SfChart.ChartBehaviors>
+                <chart:ChartZoomPanBehavior EnablePanning="True" EnableZooming="False" EnableDoubleTap="False"/>
+            </chart:SfChart.ChartBehaviors>
+        </chart:SfChart>
+        <StackLayout x:Name="rightPanelLayout" Orientation="Vertical">
+            <Label x:Name="controlLabel" Text="Control:"></Label>
+            <Frame x:Name="controlFrame" OutlineColor ="Color.Accent">
+                <StackLayout Orientation="Vertical" Padding="-10">
+                    <Button x:Name="startStopButton" Text="Start" Clicked="OnStartStopButtonClicked"></Button>
+                    <Button x:Name="saveButton" Text="Save as JPG" Clicked="OnSaveButtonClicked" IsEnabled="False"></Button>
+                    <Button x:Name="sendButton" Text="Send to clinic" Clicked="OnSendToClinickButtonClicked" IsEnabled="False"></Button>
+                </StackLayout>
+            </Frame>
+            <Label x:Name="resultsLabel" Text="Results:"></Label>
+            <Frame x:Name="resultsFrame" OutlineColor ="Color.Accent">
+                <StackLayout Orientation="Horizontal" Padding="-10">
+                    <Label x:Name="heartRateLabel" Text="Heart rate:" VerticalOptions="Center"></Label>
+                    <Entry x:Name="heartRateEntry" Text="0" VerticalOptions="Start" IsEnabled="False"></Entry>
+                    <Label x:Name="bpmLabel" Text="BPM" VerticalOptions="Center"></Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
