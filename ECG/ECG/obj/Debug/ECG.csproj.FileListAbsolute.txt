@@ -1,0 +1,5 @@
+C:\ASPNET\ECG\ECG\bin\ECG.dll
+C:\ASPNET\ECG\ECG\bin\ECG.pdb
+C:\ASPNET\ECG\ECG\obj\Debug\ResolveAssemblyReference.cache
+C:\ASPNET\ECG\ECG\obj\Debug\ECG.dll
+C:\ASPNET\ECG\ECG\obj\Debug\ECG.pdb

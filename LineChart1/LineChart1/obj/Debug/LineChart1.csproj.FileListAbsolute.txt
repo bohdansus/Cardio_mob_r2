@@ -1,0 +1,5 @@
+C:\ASPNET\LineChart1\LineChart1\bin\LineChart1.dll
+C:\ASPNET\LineChart1\LineChart1\bin\LineChart1.pdb
+C:\ASPNET\LineChart1\LineChart1\obj\Debug\ResolveAssemblyReference.cache
+C:\ASPNET\LineChart1\LineChart1\obj\Debug\LineChart1.dll
+C:\ASPNET\LineChart1\LineChart1\obj\Debug\LineChart1.pdb
